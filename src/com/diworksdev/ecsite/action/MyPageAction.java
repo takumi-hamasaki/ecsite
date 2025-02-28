@@ -15,12 +15,13 @@ public class MyPageAction extends ActionSupport implements SessionAware {
 	public Map<String, Object> session;
 	private MyPageDAO myPageDAO = new MyPageDAO();
 	private ArrayList<MyPageDTO> myPageList = new ArrayList<MyPageDTO>();
-	private String deleteFlg; private String message;
+	private String deleteFlg; 
+	private String message;
 	
 	public String execute() throws SQLException {
 		if (!session.containsKey ("login_user_id")) {
 			return ERROR;
-			}
+		}
 		
 		if(deleteFlg == null) {
 			String item_transaction_id = session.get("id").toString();
@@ -42,7 +43,6 @@ public class MyPageAction extends ActionSupport implements SessionAware {
 		int res = myPageDAO.buyItemHistoryDelete(item_transaction_id, user_master_id);
 		
 		if(res > 0) {
-			
 			myPageList = null;
 			setMessage("商品情報を正しく削除しました。");
 		} else if(res == 0) {

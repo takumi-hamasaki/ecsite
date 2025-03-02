@@ -10,7 +10,8 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class UserCreateCompleteAction extends ActionSupport implements SessionAware {
 	
-	private String loginUserId; private String loginPassword; 
+	private String loginUserId; 
+	private String loginPassword; 
 	private String userName;
 	public Map<String,Object> session;
 	
@@ -18,7 +19,7 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 	
 	public String execute() throws SQLException {
 		
-		userCreateCompleteDAO.cerateUser(session.get("loginUserId").toString(), 
+		userCreateCompleteDAO.createUser(session.get("loginUserId").toString(), 
 				session.get("loginPassword").toString(),
 				session.get("userName").toString());
 		

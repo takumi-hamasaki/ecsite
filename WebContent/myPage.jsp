@@ -72,11 +72,11 @@ table {
 				<h3>ご購入情報は以下になります。</h3> 
 			<table border="1">
 				<tr>
-					<th>商 品 名 </th> 
-					<th>値 段 </th>
-					<th>購 入 個 数 </th> 
+					<th>商品名</th> 
+					<th>値段</th>
+					<th>購入個数</th> 
 					<th>支払い方法</th> 
-					<th>購 入 日 </th>
+					<th>購入日</th>
 				</tr>
 			<s:iterator value="myPageList">
 				<tr>
